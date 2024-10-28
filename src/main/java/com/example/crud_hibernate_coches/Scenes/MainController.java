@@ -1,6 +1,7 @@
 package com.example.crud_hibernate_coches.Scenes;
 
 import com.example.crud_hibernate_coches.Obj.CRUDCoche;
+import com.example.crud_hibernate_coches.Obj.CRUDCocheImplement;
 import com.example.crud_hibernate_coches.Obj.Coche;
 import com.example.crud_hibernate_coches.Utils.AlertUtils;
 import com.example.crud_hibernate_coches.Utils.Validator;
@@ -200,7 +201,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            cocheCRUD = new CRUDCoche(); //Inicializo el objeto CRUD de coche
+            cocheCRUD = new CRUDCocheImplement(); //Inicializo el objeto CRUD de coche
             //JavaFX: Tabla y Lista
             //Comienzo dando los tipos de valor que va a recibir la tabla.
             matrTCol.setCellValueFactory(new PropertyValueFactory<>("matricula"));
