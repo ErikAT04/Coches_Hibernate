@@ -11,7 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="600.0" stylesheets="@src/styles/mainAppStyle.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erikat.cochesmongodb.Scenes.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="478.0" prefWidth="600.0" stylesheets="@src/styles/mainAppStyle.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crud_hibernate_coches.Scenes.MainController">
    <children>
       <TableView fx:id="carTView" layoutX="57.0" layoutY="239.0" onMouseClicked="#onContentClickInTable" prefHeight="181.0" prefWidth="486.0">
          <columns>

@@ -9,7 +9,7 @@ public class HibernateUtils {
     static SessionFactory factory = null;
     static {
         Configuration cfg = new Configuration(); //Creo un objeto de Configuración de Hibernate
-        cfg.configure("hibernate.cfg.xml"); //Abrimos el archivo de configuración
+        cfg.configure("config/hibernate.cfg.xml"); //Abrimos el archivo de configuración
         cfg.addAnnotatedClass(Coche.class);
         factory = cfg.buildSessionFactory(); //Crea la fábrica de sesiones
     }

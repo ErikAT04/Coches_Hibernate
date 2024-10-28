@@ -64,7 +64,7 @@ public class MainController implements Initializable {
             } else {
                 Optional<ButtonType> bt = AlertUtils.showAlert(Alert.AlertType.CONFIRMATION, "¿Quieres borrar este vehículo?", "Borrar coche");
                 if (bt.isPresent() && bt.get() == ButtonType.OK) { //Pide confirmación al usuario, y si este la acepta, sigue con el borrado
-                    if (cocheCRUD.borrarCoche(matrTField.getText())) { //Si la operación ha salido bien
+                    if (cocheCRUD.borrarCoche(cocheCRUD.getCoche(matrTField.getText()))) { //Si la operación ha salido bien
                         AlertUtils.showAlert(Alert.AlertType.INFORMATION, "Coche borrado correctamente", "Información de eliminación de coches");
                         refresh(); //Refresca la tabla y de paso borra la información de los campos (se presupone que no los va a necesitar)
                         flush();
