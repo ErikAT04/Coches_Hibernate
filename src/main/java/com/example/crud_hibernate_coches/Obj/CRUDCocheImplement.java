@@ -40,40 +40,49 @@ public class CRUDCocheImplement implements CRUDCoche{ //DAO de Coche en MySQL Hi
     }
 
     public boolean insertarCoche(Coche coche) {
+        Transaction insertCoche = null;
         try {
-            Transaction insertCoche = session.beginTransaction();
+            insertCoche = session.beginTransaction();
             session.save(coche);
             insertCoche.commit();
             session.clear();
             return true;
         }catch (Exception e){ //Si falla la base de datos devuelve falso
             System.out.println("Error de base de datos");
+            assert insertCoche != null;
+            insertCoche.rollback();
         }
         return false;
     }
 
     public boolean actualizarCoche(Coche coche) {
+        Transaction updateCoche = null;
         try{
-            Transaction updateCoche = session.beginTransaction();
+            updateCoche = session.beginTransaction();
             session.update(coche);
             updateCoche.commit();
             session.clear();
             return true;
         }catch (Exception e){
             System.out.println("Error de base de datos");
+            assert updateCoche != null;
+            updateCoche.rollback();
         }
         return false;
     }
 
     public boolean borrarCoche(Coche coche) {
+        Transaction deleteCoche = null;
         try{
-            Transaction deleteCoche = session.beginTransaction();
+            deleteCoche = session.beginTransaction();
             session.delete(coche);
             deleteCoche.commit();
             session.clear();
             return true;
         }catch (Exception e){
             System.out.println("Error de base de datos");
+            assert deleteCoche != null;
+            deleteCoche.rollback();
         }
         return false;
     }

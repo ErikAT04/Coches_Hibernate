@@ -60,7 +60,7 @@ public class MainController implements Initializable {
     void onDeleteClick(ActionEvent event) {
         try {
             //Para borrar, tiene que tener en cuenta que la matrícula existe y que aparece dentro de la base de datos.
-            if (matrTField.getText().isEmpty()) { //Si el campo de la matrícula está vacío:
+            if (matrTField.getText().isBlank()) { //Si el campo de la matrícula está vacío:
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "El campo de matrícula tiene que tener datos", "Error de campos");
             } else {
                 Optional<ButtonType> bt = AlertUtils.showAlert(Alert.AlertType.CONFIRMATION, "¿Quieres borrar este vehículo?", "Borrar coche");
@@ -89,7 +89,7 @@ public class MainController implements Initializable {
             4. Para que se edite, el coche tiene que haber cambiado, como mínimo, un parámetro
          */
         try{
-            if (markTField.getText().isEmpty() || matrTField.getText().isEmpty() || modelTField.getText().isEmpty() || typeCB.getValue().isEmpty()){ //Si alguno de los campos está vacío:
+            if (markTField.getText().isBlank() || matrTField.getText().isBlank() || modelTField.getText().isBlank() || typeCB.getValue().isBlank()){ //Si alguno de los campos está vacío:
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Alguno de los campos está vacío", "Error de campos");
             } else{
                 if (Validator.validatePlate(matrTField.getText())){ //Si la matrícula no cumple los criterios de validación
@@ -127,7 +127,7 @@ public class MainController implements Initializable {
             3. No haya un coche ya con esa matrícula en la base de datos
          */
         try {
-            if (markTField.getText().isEmpty() || matrTField.getText().isEmpty() || modelTField.getText().isEmpty() || typeCB.getValue().isEmpty()) { //Si alguno de los campos está vacío
+            if (markTField.getText().isBlank() || matrTField.getText().isBlank() || modelTField.getText().isBlank() || typeCB.getValue().isBlank()) { //Si alguno de los campos está vacío
                 AlertUtils.showAlert(Alert.AlertType.ERROR, "Alguno de los campos está vacío", "Error de campos");
             } else {
                 if (Validator.validatePlate(matrTField.getText())) { //Si la matrícula cumple los criterios de validación continúa con el proceso
